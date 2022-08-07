@@ -153,7 +153,8 @@ export default function buildMathML(tree, texExpression, style, settings) {
   let wrapper = expression.length === 1 && tag === null && (n1 instanceof MathNode)
           && !(n1.type === "mstyle" && n1.attributes.mathcolor)
       ? expression[0]
-      : setLineBreaks(expression, settings.displayMode, settings.annotate)
+      : expression[0]
+// setLineBreaks(expression, settings.displayMode, settings.annotate)
 
   if (tag) {
     wrapper = taggedExpression(wrapper, tag, style, settings.leqno)
